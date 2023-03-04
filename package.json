@@ -1,5 +1,7 @@
 {
-  "name": "frontendtest",
+  "name": "chess-frontend-tests",
+  "description": "FrontEnd Programming Challenge for Chess.com",
+  "license": "MIT",
   "version": "0.0.0",
   "private": true,
   "scripts": {
