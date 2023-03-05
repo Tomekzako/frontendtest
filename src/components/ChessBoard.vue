@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import ChessRow from '@/components/ChessRow.vue'
 
-var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 var numbers = ['1', '2', '3', '4', '5', '6', '7', '8']
 </script>
 
 <template>
-  <div>
+  <div class="chessboard">
     <ChessRow
-      v-for="(row, index) in letters"
+      v-for="(letter, index) in letters"
       :key="index"
-      :direction="index % 2 === 0 ? 'row' : 'reverse'"
-      :row="row"
+      :even="index % 2 === 0"
+      :letter="letter"
       :length="letters.length"
     />
   </div>
@@ -19,7 +19,11 @@ var numbers = ['1', '2', '3', '4', '5', '6', '7', '8']
 
 <style lang="scss" scoped>
 @import '@/assets/base.css';
-div {
-  color: blue;
+.chessboard {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
 }
 </style>

@@ -4,7 +4,7 @@ import ChessBoard from './components/ChessBoard.vue'
 
 <template>
   <header>
-    <h2>Chess Board</h2>
+    <h2 class="chessboard__header">Chess Board</h2>
   </header>
 
   <main>
@@ -14,7 +14,9 @@ import ChessBoard from './components/ChessBoard.vue'
 
 <style lang="scss" scoped>
 @import './assets/base.css';
-.wrapper {
-  color: var(--vt-c-black);
+.chessboard__header {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
 }
 </style>

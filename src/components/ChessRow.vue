@@ -1,33 +1,34 @@
 <script setup lang="ts">
 import ChessSquare from '@/components/ChessSquare.vue'
 
-defineProps({
-  direction: String,
-  row: String,
+const props = defineProps({
+  even: Boolean,
+  letter: String,
   length: Number
 })
+
+const isEven = (square: number) => {
+  return props.even ? square % 2 === 0 : square % 2 === 1
+}
 </script>
 
 <template>
-  <div class="row" :class="{ reversed: direction === 'reverse' }">
+  <div class="chessboard__row">
     <ChessSquare
       v-for="(square, i) in length"
       :key="i"
-      :changeBackground="square % 2 === 0 ? true : false"
+      :changeBackground="isEven(square)"
       :square="square"
-      :letter="row"
+      :letter="letter"
+      :index="i"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/base.css';
-.row {
+.chessboard__row {
   display: flex;
-  width: 200px;
-  height: 25px;
-}
-.reversed {
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
 }
 </style>
