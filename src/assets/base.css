@@ -5,13 +5,20 @@
   --font-medium: 500;
 
   /* Font size */
-  --font-sm: 0.875rem;
-  --font-base: 1rem;
-  --font-lg: 1.125rem;
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-base: 1rem;
+  --size-lg: 1.125rem;
 
   /* Colors */
   --c-primary: #779952;
   --c-secondary: #edeed1;
+  --c-tertiary: #eb6150;
+
+  /* Breakpoints */
+  --mobile: 481px;
+  --tablet: 768px;
+
 }
 
 

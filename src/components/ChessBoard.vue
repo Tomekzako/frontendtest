@@ -1,29 +1,27 @@
 <script setup lang="ts">
 import ChessRow from '@/components/ChessRow.vue'
+import { useStore } from '@/store'
 
-var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-var numbers = ['1', '2', '3', '4', '5', '6', '7', '8']
+const store = useStore()
 </script>
 
 <template>
   <div class="chessboard">
     <ChessRow
-      v-for="(letter, index) in letters"
+      v-for="(letter, index) in store.letters"
       :key="index"
       :even="index % 2 === 0"
       :letter="letter"
-      :length="letters.length"
+      :length="store.letters.length"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/base.css';
 .chessboard {
-  max-width: 400px;
-  margin: 0 auto;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 </style>

@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import ChessSquare from '@/components/ChessSquare.vue'
 
-const props = defineProps({
-  even: Boolean,
-  letter: String,
-  length: Number
-})
+const props = defineProps<{
+  even: boolean
+  letter: Letter
+  length: number
+}>()
+
+interface Letter {
+  letter: string
+  fields: Field[]
+}
+
+interface Field {
+  position: number
+  selected: boolean
+}
 
 const isEven = (square: number) => {
   return props.even ? square % 2 === 0 : square % 2 === 1
@@ -15,11 +25,11 @@ const isEven = (square: number) => {
 <template>
   <div class="chessboard__row">
     <ChessSquare
-      v-for="(square, i) in length"
+      v-for="(square, i) in letter.fields"
       :key="i"
-      :changeBackground="isEven(square)"
+      :changeBackground="isEven(square.position)"
       :square="square"
-      :letter="letter"
+      :letter="letter.letter"
       :index="i"
     />
   </div>
