@@ -6,7 +6,7 @@ const store = useStore()
 </script>
 
 <template>
-  <div class="chessboard">
+  <div class="chessboard__main">
     <ChessRow
       v-for="(letter, index) in store.letters"
       :key="index"
@@ -18,7 +18,7 @@ const store = useStore()
 </template>
 
 <style lang="scss" scoped>
-.chessboard {
+.chessboard__main {
   border-radius: 5px;
   display: flex;
   flex-direction: row;

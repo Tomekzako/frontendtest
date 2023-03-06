@@ -3,6 +3,8 @@
   /* Font weight */
   --font-light: 300;
   --font-medium: 500;
+  --font-bold: 600;
+
 
   /* Font size */
   --size-xs: 0.75rem;
@@ -40,3 +42,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+

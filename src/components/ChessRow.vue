@@ -1,21 +1,12 @@
 <script setup lang="ts">
 import ChessSquare from '@/components/ChessSquare.vue'
+import type { Letter } from '@/types/ChessTypes'
 
 const props = defineProps<{
   even: boolean
   letter: Letter
   length: number
 }>()
-
-interface Letter {
-  letter: string
-  fields: Field[]
-}
-
-interface Field {
-  position: number
-  selected: boolean
-}
 
 const isEven = (square: number) => {
   return props.even ? square % 2 === 0 : square % 2 === 1

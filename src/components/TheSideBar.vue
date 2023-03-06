@@ -28,6 +28,9 @@ const store = useStore()
   color: var(--c-secondary);
   border-radius: 10px;
   overflow: hidden;
+  @media (min-width: 480px) {
+    margin: 1rem 3rem 0;
+  }
   @media (min-width: 768px) {
     margin-top: 0;
     width: 6rem;
@@ -35,7 +38,7 @@ const store = useStore()
     max-height: 32rem;
   }
   @media (min-width: 960px) {
-    max-height: 40rem;
+    max-height: 36rem;
   }
   &--title {
     font-size: var(--size-xs);
@@ -67,7 +70,7 @@ const store = useStore()
   }
   &--item {
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: var(--size-xs);
     border-right: 1px solid var(--c-secondary);
     min-width: 4rem;

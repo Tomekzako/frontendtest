@@ -14,24 +14,32 @@ const resetSelection = () => {
 </script>
 
 <template>
-  <header class="chessboard__header">
-    <TheButton @click="resetSelection" :disabled="store.clickedSquares.length === 0"
-      >Reset</TheButton
-    >
-  </header>
-
-  <main class="chessboard__wrapper">
-    <ChessBoard />
-    <TheSideBar />
-  </main>
+  <div class="chessboard">
+    <main class="chessboard__wrapper">
+      <TheButton
+        @click="resetSelection"
+        :disabled="store.clickedSquares.length === 0"
+        class="chessboard__button--reset"
+        >Reset</TheButton
+      >
+      <ChessBoard />
+      <TheSideBar />
+    </main>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @import './assets/base.css';
 .chessboard {
-  &__header {
-    text-align: center;
-    margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  position: relative;
+  @media (min-width: 768px) {
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
   }
   &__wrapper {
     display: flex;
@@ -40,7 +48,15 @@ const resetSelection = () => {
     margin-bottom: 1rem;
     @media (min-width: 768px) {
       flex-direction: row;
-      margin-bottom: 3rem;
+      margin: 1rem 0;
+    }
+  }
+  &__button--reset {
+    margin: 1.5rem 0 1rem;
+    align-self: center;
+    @media (min-width: 768px) {
+      align-self: flex-start;
+      margin: 0 1rem 0 0;
     }
   }
 }

@@ -14,16 +14,19 @@ defineProps<{
 @import '@/assets/base.css';
 
 .chessboard__button {
-  font-size: var(--size-sm);
+  font-size: var(--size-xs);
   background-color: var(--c-primary);
   color: var(--c-secondary);
   border: 1px solid var(--c-primary);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-bold);
   border-radius: 5px;
   text-transform: uppercase;
   padding: 0.4rem 1rem;
   transition: all 0.3s;
   cursor: pointer;
+  @media (min-width: 960px) {
+    font-size: var(--size-sm);
+  }
   &:hover {
     background-color: var(--c-secondary);
     color: var(--c-primary);

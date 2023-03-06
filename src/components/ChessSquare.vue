@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Field } from '@/types/ChessTypes'
 import { useStore } from '@/store'
 
 const props = defineProps<{
@@ -7,11 +8,6 @@ const props = defineProps<{
   index: number
   letter: string
 }>()
-
-interface Field {
-  position: number
-  selected: boolean
-}
 
 const store = useStore()
 
@@ -56,8 +52,8 @@ const getSquareData = () => {
     height: 4rem;
   }
   @media (min-width: 960px) {
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
   &--odd {
     background-color: var(--c-secondary);
